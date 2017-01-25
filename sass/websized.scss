@@ -1,1 +1,54 @@
 @import "mixins.scss";
+
+ html, body { height: 100% }
+
+.header {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding: 0 45px;
+    height: 100px;
+    .h-link {
+        .main-logo {
+            color: transparent;
+            width: 275px;
+            height: 42px;
+            background: url('../img/logo.png')no-repeat;
+            display: inline-block;
+        }
+    }
+    .main-nav {
+        width: 360px;
+        @include flexbox;
+        @include justify-content(space-between);
+        .nav-item {
+            text-decoration: none;
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            text-transform: uppercase;
+            &:hover {@include opacity(.75)}
+        }
+    }
+}
+
+.container {
+    display: block;
+    max-width: 1170px;
+    padding: 0 25px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#main-slideshow {
+    margin: -100px 0 0;
+    height: 100%;
+    .slide {
+        background: url('../img/bg-slide1.png')no-repeat center / cover;
+        padding: 100px 0 0;
+        height: calc(100% - 100px);
+    }
+}
